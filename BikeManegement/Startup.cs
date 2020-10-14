@@ -6,10 +6,12 @@ using BikeManegement.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+
 
 namespace BikeManegement
 {
@@ -26,11 +28,13 @@ namespace BikeManegement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            //services.AddRazorPages();
 
 
-      services.AddDbContext<ApplicationDBContext>(options =>
+
+            services.AddDbContext<ApplicationDBContext>(options =>
       options.UseSqlServer(Configuration.GetConnectionString("BikeManagementConnection")));
-
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDBContext>();
 
         }
 
@@ -52,6 +56,7 @@ namespace BikeManegement
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
