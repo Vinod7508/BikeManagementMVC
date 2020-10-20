@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using BikeManegement.Data;
 using BikeManegement.Models;
 using BikeManegement.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BikeManegement.Controllers
 {
+    [Authorize(Roles = "Admin,Executive")]
     public class BikeModelController : Controller
     {
 

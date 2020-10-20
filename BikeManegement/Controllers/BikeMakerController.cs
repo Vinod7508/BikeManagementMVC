@@ -4,11 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using BikeManegement.Data;
 using BikeManegement.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace BikeManegement.Controllers
 {
+
+    [Authorize(Roles = "Admin,Executive")]
     public class BikeMakerController : Controller
     {
 

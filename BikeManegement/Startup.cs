@@ -34,7 +34,11 @@ namespace BikeManegement
 
             services.AddDbContext<ApplicationDBContext>(options =>
       options.UseSqlServer(Configuration.GetConnectionString("BikeManagementConnection")));
-            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDBContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddEntityFrameworkStores<ApplicationDBContext>()
+                    .AddDefaultUI()
+                    .AddDefaultTokenProviders();
+
 
         }
 

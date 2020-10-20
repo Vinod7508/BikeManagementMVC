@@ -22,15 +22,23 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Masters
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
-                            <a class="dropdown-item" asp-controller="BikeMaker" asp-action="Index" >BikeMakers</a>
-                            <a class="dropdown-item" asp-controller="BikeModel" asp-action="Index" >BikeModels</a>
-                        </div>
+                    @if (User.IsInRole("Admin") || User.IsInRole("Executive"))
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Masters
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" asp-controller="BikeMaker" asp-action="Index">BikeMakers</a>
+                                <a class="dropdown-item" asp-controller="BikeModel" asp-action="Index">BikeModels</a>
+                                @if (User.IsInRole("Admin"))
+                                {
+                                 <a class="dropdown-item" id="register" asp-area="Identity" asp-page="/Account/Register">Add User</a>
+                                }
+             
+                            </div>
                     </li>
+                    }
                 </ul>
              <partial name="_LoginPartial" />
             </div>

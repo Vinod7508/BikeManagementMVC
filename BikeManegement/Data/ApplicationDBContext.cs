@@ -21,6 +21,9 @@ namespace BikeManegement.Data
 
         public DbSet<BikeMaker> BikeMakers { get; set; }
         public DbSet<BikeModel> bikeModels { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set;}
+
+
 
     }
 }
