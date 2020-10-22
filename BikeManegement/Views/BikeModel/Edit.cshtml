@@ -1,4 +1,5 @@
 ﻿@model BikeManegement.ViewModels.Bike_ModelViewModel
+@using BikeManegement.Extensions
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,7 +18,7 @@
             <label asp-for="BikeMakers"></label>
         </div>
         <div class="col-4">
-            <select asp-for="BikeModel.BikeMakerId" asp-items="Model.CBikeMakers(Model.BikeMakers)" class="form-control"></select>           
+            <select asp-for="BikeModel.BikeMakerId" asp-items="Model.BikeMakers.ToselectListItems()" class="form-control"></select>
         </div>
     </div>
 
