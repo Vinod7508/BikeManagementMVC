@@ -14,7 +14,7 @@ namespace BikeManegement.Models
 
         [Required]
         [StringLength(255)]
-        public string ModelName { get; set; }
+        public string Name { get; set; }
 
         public BikeMaker BikeMaker { get; set; }
 

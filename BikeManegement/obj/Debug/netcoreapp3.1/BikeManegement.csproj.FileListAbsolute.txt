@@ -428,7 +428,6 @@ C:\Users\User\source\repos\BikeManegement\BikeManegement\bin\Debug\netcoreapp3.1
 C:\Users\User\source\repos\BikeManegement\BikeManegement\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\User\source\repos\BikeManegement\BikeManegement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\User\source\repos\BikeManegement\BikeManegement\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
-C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\BikeManegement.csprojAssemblyReference.cache
 C:\Users\User\source\repos\BikeManegement\BikeManegement\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\BikeManegement.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\BikeManegement.MvcApplicationPartsAssemblyInfo.cs
@@ -473,3 +472,6 @@ C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1
 C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\Razor\Views\Bike\Index.cshtml.g.cs
+C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\Razor\Views\Bike\Create.cshtml.g.cs
+C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\BikeManegement.csprojAssemblyReference.cache

@@ -23,6 +23,8 @@ namespace BikeManegement.Data
         public DbSet<BikeModel> bikeModels { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set;}
 
+        public DbSet<Bike> Bikes { get; set;}
+
 
 
     }

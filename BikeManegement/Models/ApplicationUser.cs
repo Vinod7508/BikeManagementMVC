@@ -15,7 +15,7 @@ namespace BikeManegement.Models
         public string PhoneNumber2 { get; set; }
 
         [NotMapped]
-        public bool isAdmin { get; set;}
+        public bool IsAdmin { get; set;}
 
 
     }

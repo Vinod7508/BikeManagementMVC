@@ -31,13 +31,15 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" asp-controller="BikeMaker" asp-action="Index">BikeMakers</a>
                                 <a class="dropdown-item" asp-controller="BikeModel" asp-action="Index">BikeModels</a>
+                                <a class="dropdown-item" asp-controller="Bike" asp-action="Index">Bikes</a>
+                                <a class="dropdown-item" id="register" asp-area="Identity" asp-page="/Account/Register">Add User</a>
                                 @if (User.IsInRole("Admin"))
                                 {
-                                 <a class="dropdown-item" id="register" asp-area="Identity" asp-page="/Account/Register">Add User</a>
+                                    <a class="dropdown-item" id="register" asp-area="Identity" asp-page="/Account/Register">Add User</a>
                                 }
-             
+
                             </div>
-                    </li>
+                        </li>
                     }
                 </ul>
              <partial name="_LoginPartial" />

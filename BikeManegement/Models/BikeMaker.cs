@@ -13,10 +13,7 @@ namespace BikeManegement.Models
 
         [Required]
         [StringLength(255)]
-        public string MakerName { get; set; }
-
-
-
+        public string Name { get; set; } 
 
     }
 }

@@ -28,7 +28,7 @@ namespace BikeManegement.ViewModels
             {
                 sli = new SelectListItem
                 {
-                    Text = bm.MakerName,
+                    Text = bm.Name,
                     Value = bm.Id.ToString()
                 };
                 MakeList.Add(sli);
