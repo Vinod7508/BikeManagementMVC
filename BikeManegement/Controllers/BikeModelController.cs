@@ -120,6 +120,14 @@ namespace BikeManegement.Controllers
 
         }
 
+        [AllowAnonymous]
+        [HttpGet("api/models/{BikeMakerID}")]
+        public IEnumerable<BikeModel> BikeModels(int BikeMakerID)
+        {
+            return _dbcontext.bikeModels.ToList()
+                 .Where(m => m.BikeMakerId == BikeMakerID);
+        }
+
         
 
 

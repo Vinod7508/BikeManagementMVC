@@ -28,18 +28,28 @@ namespace BikeManegement.Models
 
         public string Features { get; set; }
 
-        [Required]
+    
+        [Required(ErrorMessage = "Provide Seller Name")]
+        [StringLength(50)]
         public string SellerName { get; set; }
 
+
+        [EmailAddress(ErrorMessage = "Invalid Email ID")]
+        [StringLength(50)]
         public string SellerEmail { get; set; }
 
-        [Required]
+        
+        [Required(ErrorMessage = "Provide Phone No.")]
+        [Phone]
+        [StringLength(15)]
         public string SellerPhone { get; set; }
 
-        [Required]
+      
+        [Required(ErrorMessage = "Provide Price")]
+        [Range(1, 999999999, ErrorMessage = "Not with in the valid price range")]
         public int Price { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Please select approprite currency")]
         public string Currency { get; set;}
 
     }

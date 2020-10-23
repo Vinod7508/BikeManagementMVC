@@ -14,27 +14,6 @@ namespace BikeManegement.ViewModels
 
         public IEnumerable<BikeMaker> BikeMakers { get; set; }
 
-        public IEnumerable<SelectListItem> CBikeMakers(IEnumerable<BikeMaker> items)
-        {
-            List<SelectListItem> MakeList = new List<SelectListItem>();
-
-            SelectListItem sli = new SelectListItem
-            {
-                Text = "---select----",
-                Value = "0",
-            };
-            MakeList.Add(sli);
-            foreach(BikeMaker bm in items)
-            {
-                sli = new SelectListItem
-                {
-                    Text = bm.Name,
-                    Value = bm.Id.ToString()
-                };
-                MakeList.Add(sli);
-            }
-            return MakeList;
-
-        }
+       
     }
 }

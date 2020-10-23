@@ -16,57 +16,35 @@ namespace BikeManegement.ViewModels
 
         public IEnumerable<BikeMaker> BikeMakers { get; set; }
 
-        public IEnumerable<SelectListItem> BikeMakersList(IEnumerable<BikeMaker> items)
+        public IEnumerable<Currency> Currencies { get; set; }
+
+
+        private List<Currency> CList = new List<Currency>();
+        private List<Currency> CreateList()
         {
-            List<SelectListItem> MakeList = new List<SelectListItem>();
-
-            SelectListItem sli = new SelectListItem
-            {
-                Text = "---select----",
-                Value = "0",
-            };
-
-            MakeList.Add(sli);
-            foreach (BikeMaker bm in items)
-            {
-                sli = new SelectListItem
-                {
-                    Text = bm.Name,
-                    Value = bm.Id.ToString()
-                };
-                MakeList.Add(sli);
-            }
-            return MakeList;
-
+            CList.Add(new Currency("USD", "USD"));
+            CList.Add(new Currency("INR", "INR"));
+            return CList;
         }
 
-        public IEnumerable<SelectListItem> BikeModelList(IEnumerable<BikeModel> items)
+        public BikeViewModel()
         {
-            List<SelectListItem> BikeModelList = new List<SelectListItem>();
-
-            SelectListItem Modellist = new SelectListItem
-            {
-                Text = "---select----",
-                Value = "0",
-            };
-
-            BikeModelList.Add(Modellist);
-
-            foreach (BikeModel bm in items)
-            {
-                Modellist = new SelectListItem
-                {
-                    Text = bm.Name,
-                    Value = bm.Id.ToString()
-                };
-                BikeModelList.Add(Modellist);
-            }
-            return BikeModelList;
+            Currencies = CreateList();
         }
-
-
-    
 
     }
 
+
+    public class Currency
+    {
+        public String Id { get; set; }
+        public String Name { get; set; }
+        public Currency(String id, String value)
+        {
+            Id = id;
+            Name = value;
+        }
+    }
+
 }
+

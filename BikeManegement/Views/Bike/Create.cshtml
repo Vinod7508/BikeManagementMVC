@@ -1,8 +1,50 @@
 ﻿@model BikeManegement.ViewModels.BikeViewModel
+@using BikeManegement.Extensions
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+<script>
+    
+    $(document).ready(function () {
+        var MakeDDL = $("#bikemaker");
+        var ModelDDL = $("#bikeModel");
+
+        ModelDDL.prop('disabled', true);
+
+        MakeDDL.change(function () {
+            if ($(this).val() == "0") {
+                ModelDDL.prop('disabled', true);
+                ModelDDL.val("0");
+            }
+            else {
+                $.ajax({
+                    url: "/api/models/" + $(this).val(),
+                    method: "get",
+
+                    success: function (data) {
+                        ModelDDL.prop('disabled', false);
+                        console.log("Success:");
+                        ModelDDL.empty();
+                        ModelDDL.append($('<option/>', { value: '0', text: '--Select Model--' }));
+                        $(data).each(function (index, item) {
+                            ModelDDL.append($('<option/>', { value: item.id, text: item.name }));
+                        });
+                    }
+                });
+            }
+        });
+
+    });
+
+</script>
+
+
+
+
+
 
 
 <br />
@@ -18,7 +60,7 @@
             <label asp-for="BikeMakers"></label>
         </div>
         <div class="col-4">
-            <select asp-for="Bike.BikeMakerID" asp-items="Model.BikeMakersList(Model.BikeMakers)" class="form-control"></select>
+            <select asp-for="Bike.BikeMakerID" asp-items="Model.BikeMakers.ToselectListItems()" class="form-control" id="bikemaker"></select>
         </div>
     </div>
 
@@ -28,7 +70,7 @@
             <label asp-for="BikeModels"></label>
         </div>
         <div class="col-4">
-            <select asp-for="Bike.BikeModelID" asp-items="Model.BikeModelList(Model.BikeModels)" class="form-control"></select>
+            <select asp-for="Bike.BikeModelID" asp-items="Model.BikeModels.ToselectListItems()" class="form-control" id="bikeModel"></select>
         </div>
     </div>
 
@@ -39,7 +81,7 @@
         </div>
         <div class="col-4">
             <Input asp-for="Bike.Year" class="form-control" />
-            @*<span asp-validation-for="Bike.Year" class="text-danger"></span>*@
+            <span asp-validation-for="Bike.Year" class="text-danger"></span>
         </div>
     </div>
 
@@ -49,13 +91,12 @@
         </div>
         <div class="col-4">
             <Input asp-for="Bike.Mileage" class="form-control" />
-            @*<span asp-validation-for="Bike.Year" class="text-danger"></span>*@
+            <span asp-validation-for="Bike.Year" class="text-danger"></span>
         </div>
     </div>
 
 
     <div class="form-group row">
-
         <div class="col-2">
             <label asp-for="Bike.Price"></label>
         </div>
@@ -64,14 +105,29 @@
             <Input asp-for="Bike.Price" class="form-control" />
             <span asp-validation-for="Bike.Price" class="text-danger"></span>
         </div>
+        <div class="col-1">
+            <label asp-for="Bike.Currency"></label>
+        </div>
+
+        <div class="col-2">
+            <select asp-for="Bike.Currency" asp-items="Model.Currencies.ToselectListItems()" class="form-control"></select>
+            <span asp-validation-for="Bike.Currency" class="text-danger"></span>
+        </div>
+
     </div>
+
+
+
+
+
+
 
     <div class="form-group row">
         <div class="col-2">
             <label asp-for="Bike.Features"></label>
         </div>
         <div class="col-4">
-            <Input asp-for="Bike.Features" class="form-control" />
+            <textarea asp-for="Bike.Features" class="form-control"></textarea>
             @*<span asp-validation-for="Bike.Year" class="text-danger"></span>*@
         </div>
     </div>
@@ -83,7 +139,7 @@
         </div>
         <div class="col-4">
             <Input asp-for="Bike.SellerName" class="form-control" />
-            @*<span asp-validation-for="Bike.Year" class="text-danger"></span>*@
+            <span asp-validation-for="Bike.Year" class="text-danger"></span>
         </div>
     </div>
 

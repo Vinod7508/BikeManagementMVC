@@ -18,14 +18,14 @@ namespace BikeManegement.Controllers
         private readonly ApplicationDBContext _dbcontext;
 
         [BindProperty]
-        public BikeViewModel bikeVM { get; set; }
+        public BikeViewModel BikeVM { get; set; }
 
         public BikeController(ApplicationDBContext dBContext)
         {
 
             _dbcontext = dBContext;
 
-            bikeVM = new BikeViewModel()
+            BikeVM = new BikeViewModel()
             {
                 BikeModels = _dbcontext.bikeModels.ToList(),
                 BikeMakers = _dbcontext.BikeMakers.ToList(),
@@ -47,7 +47,7 @@ namespace BikeManegement.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View(bikeVM);
+            return View(BikeVM);
         }
 
         [HttpPost ,ActionName("Create")]
@@ -55,13 +55,18 @@ namespace BikeManegement.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(bikeVM);
+                BikeVM.BikeMakers = _dbcontext.BikeMakers.ToList();
+                BikeVM.BikeModels = _dbcontext.bikeModels.ToList();
+                return View(BikeVM);
             }
-            _dbcontext.Bikes.Add(bikeVM.Bike);
+            _dbcontext.Bikes.Add(BikeVM.Bike);
             _dbcontext.SaveChanges();
             return RedirectToAction(nameof(Index));
          
         }
+
+
+
 
 
 

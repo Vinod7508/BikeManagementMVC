@@ -9,7 +9,7 @@ namespace BikeManegement.Extensions
     public static class DropDownExtension
     {
 
-        public  static IEnumerable<SelectListItem> ToselectListItems<T>(this IEnumerable<T> items)
+        public  static IEnumerable<SelectListItem> ToselectListItems<T>(this IEnumerable<T> Items)
         {
             List<SelectListItem> DropdownList = new List<SelectListItem>();
 
@@ -19,7 +19,7 @@ namespace BikeManegement.Extensions
                 Value = "0",
             };
             DropdownList.Add(sli);
-            foreach (var Item in items)
+            foreach (var Item in Items)
             {
                 sli = new SelectListItem
                 {
