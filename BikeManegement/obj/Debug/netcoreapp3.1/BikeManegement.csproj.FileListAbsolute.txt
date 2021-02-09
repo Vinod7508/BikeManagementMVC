@@ -475,3 +475,4 @@ C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1
 C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\Razor\Views\Bike\Index.cshtml.g.cs
 C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\Razor\Views\Bike\Create.cshtml.g.cs
 C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\BikeManegement.csprojAssemblyReference.cache
+C:\Users\User\source\repos\BikeManegement\BikeManegement\obj\Debug\netcoreapp3.1\Razor\Views\Bike\Edit.cshtml.g.cs

@@ -7,12 +7,12 @@
 
 
 <script>
-    
+
     $(document).ready(function () {
         var MakeDDL = $("#bikemaker");
         var ModelDDL = $("#bikeModel");
 
-        ModelDDL.prop('disabled', true);
+        //ModelDDL.prop('disabled', true);
 
         MakeDDL.change(function () {
             if ($(this).val() == "0") {
@@ -47,7 +47,8 @@
 <br />
 
 <h2 class="text-info">Adding a Bike</h2>
-<form method="post" asp-action="Create">
+<form method="post" asp-action="Edit">
+    <input hidden asp-for="Bike.Id" />
 
 
     <div class="form-group row">
@@ -165,7 +166,7 @@
 
     <br />
     <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Create Bike Model" />
+        <input type="submit" class="btn btn-primary" value="Edit a Bike" />
         <a asp-action="Index" class="btn btn-success">Back</a>
     </div>
 
