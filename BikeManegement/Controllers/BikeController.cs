@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BikeManegement.Controllers
 {
 
-    [Authorize(Roles = "Admin,Executive")]
+    //[Authorize(Roles = "Admin,Executive")]
     public class BikeController : Controller
     {
 
